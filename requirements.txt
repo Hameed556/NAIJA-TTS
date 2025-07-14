@@ -1,0 +1,43 @@
+# ==============================================================================
+# Nigerian TTS API - Railway Compatible Requirements
+# Version: 1.0.0
+# Python: >=3.9,<3.12
+# ==============================================================================
+
+# Core Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# Machine Learning & AI (Compatible versions)
+torch==2.7.0
+torchaudio==2.7.0
+transformers==4.35.2
+huggingface-hub==0.17.3
+
+# Data Validation & Configuration (Compatible versions)
+pydantic==2.5.0
+pydantic-settings==2.0.3
+typing-extensions==4.8.0
+python-dotenv==1.0.0
+
+# HTTP & Network
+requests==2.31.0
+
+# Testing Framework
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# Production Server
+gunicorn==21.2.0
+
+# Performance & Optimization
+aiofiles==23.2.0
+orjson==3.9.10
+
+# ==============================================================================
+# Installation Notes for Railway
+# ==============================================================================
+# PyTorch will be installed with CPU support by default
+# YarnGPT must be installed separately in Dockerfile
+# ==============================================================================
