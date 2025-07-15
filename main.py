@@ -345,7 +345,7 @@ if __name__ == "__main__":
     print(f"🚀 Starting {settings.API_NAME} on {settings.HOST}:{settings.PORT}")
     uvicorn.run(
         app, 
-        host=settings.HOST, 
-        port=settings.PORT,
+        host="0.0.0.0", 
+        port=int(os.environ.get("PORT", 10000)),
         reload=settings.DEBUG
     )
