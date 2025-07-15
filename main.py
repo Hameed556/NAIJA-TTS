@@ -283,7 +283,7 @@ async def generate_audio(request: TTSRequest, background_tasks: BackgroundTasks)
         
         # Schedule cleanup
         background_tasks.add_task(cleanup_single_file, output_path)
-        background_tasks.add_task(cleanup_old_files, audio_manager.temp_dir)
+        background_tasks.add_task(cleanup_old_files, audio_manager.base_dir)
         
         return TTSResponse(
             audio_base64=audio_base64,
@@ -314,7 +314,7 @@ async def generate_tts(request: TTSRequest, background_tasks: BackgroundTasks):
 @app.get("/audio/{filename}")
 async def get_audio(filename: str):
     """Serve audio files"""
-    file_path = os.path.join(audio_manager.temp_dir, filename)
+    file_path = os.path.join(audio_manager.base_dir, filename)
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Audio file not found")
     return FileResponse(file_path, media_type="audio/wav")

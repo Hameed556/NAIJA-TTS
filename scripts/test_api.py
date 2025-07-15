@@ -10,7 +10,7 @@ import wave
 import os
 import time
 
-API_BASE_URL = "http://localhost:8000"
+API_BASE_URL = "https://naija-tts.onrender.com"
 
 def test_health_check():
     """Test the health check endpoint"""
