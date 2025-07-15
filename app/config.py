@@ -35,7 +35,7 @@ class Settings:
     )
     MODEL_CHECKPOINT_URL: str = os.getenv(
         "MODEL_CHECKPOINT_URL", 
-        "https://drive.google.com/uc?id=1-ASeEkrn4HY49yZWHTASgfGFNXdVnLTt"
+        "https://huggingface.co/Hameed13/News_Podcast_Model/resolve/main/model.ckpt"
     )
 
     # CORS settings
