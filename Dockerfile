@@ -20,7 +20,7 @@ COPY requirements.txt .
 RUN pip install torch==2.1.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cpu
 
 # Try to install YarnGPT - if it fails, continue without it
-RUN pip install git+https://github.com/yarngpt/yarngpt.git || echo "YarnGPT not available - will run in testing mode"
+RUN pip install git+https://github.com/saheedniyi02/YarnGPT.git
 
 # Install remaining requirements
 RUN pip install --no-cache-dir -r requirements.txt
