@@ -33,6 +33,7 @@ aiofiles==23.2.0
 orjson==3.9.10
 
 psutil==5.9.8
+inflect
 
 # ==============================================================================
 # Installation Notes for Railway
