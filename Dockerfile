@@ -34,6 +34,7 @@ RUN mkdir -p /tmp/audio_files
 # Create non-root user for security
 RUN groupadd -r appuser && useradd -r -g appuser appuser
 RUN chown -R appuser:appuser /app /tmp/audio_files
+RUN mkdir -p /home/appuser && chown -R appuser:appuser /home/appuser
 USER appuser
 
 # Expose port
