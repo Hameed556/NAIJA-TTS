@@ -8,8 +8,8 @@ import random
 import numpy as np
 import torchaudio
 from transformers import AutoTokenizer
-from outetts.wav_tokenizer.decoder import WavTokenizer
-from outetts.wav_tokenizer.encoder.utils import convert_audio
+#from outetts.wav_tokenizer.decoder import WavTokenizer
+#from outetts.wav_tokenizer.encoder.utils import convert_audio
 
 class AudioTokenizer:
 
@@ -138,7 +138,7 @@ class AudioTokenizerForLocal(AudioTokenizer):
             "igbo":"<|igbo|>",
             "yoruba":"<|yoruba|>",
         }
-        self.uroman = ur.Uroman()
+        #self.uroman = ur.Uroman()
         self.DEFAULT_SPEAKERS_DIR = os.path.join(self.BASE_DIR, "default_speakers_local")
         self.speakers = [
             "hausa_male1", "hausa_male2","yoruba_male1", "yoruba_male2","igbo_male2" #"igbo_male1", "igbo_male2",
@@ -146,7 +146,7 @@ class AudioTokenizerForLocal(AudioTokenizer):
         ]
         
     def process_text(self, text: str):
-        text = self.uroman.romanize_string(text)
+        #text = self.uroman.romanize_string(text)
         text = re.sub(r'\d+(\.\d+)?', lambda x: self.lec.number_to_words(x.group()), text.lower())
         text = re.sub(r'[-_/,\.\\]', ' ', text)
         text = re.sub(r'[^a-z\s]', '', text)
@@ -205,7 +205,7 @@ class AudioTokenizerV2(AudioTokenizer):
             "english":"<|english|>",#<|english|>
             "asr":"<|asr|>"
         }
-        self.uroman = ur.Uroman()
+        #self.uroman = ur.Uroman()
         self.DEFAULT_SPEAKERS_DIR_LOCAL = os.path.join(self.BASE_DIR, "default_speakers_local")
         self.DEFAULT_SPEAKERS_ENG = os.path.join(self.BASE_DIR, "default_speakers")
         self.speakers_local = [
@@ -222,7 +222,7 @@ class AudioTokenizerV2(AudioTokenizer):
                              ('<|1845|>', '<|1838|><|1838|>')]
 
     def process_text(self, text: str):
-        text = self.uroman.romanize_string(text)
+        #text = self.uroman.romanize_string(text)
         text = re.sub(r'\d+(\.\d+)?', lambda x: self.lec.number_to_words(x.group()), text.lower())
         text = re.sub(r'[-_/,\.\\]', ' ', text)
         text = re.sub(r'[^a-z\s]', '', text)
@@ -316,4 +316,4 @@ class AudioTokenizerV2(AudioTokenizer):
         for text in self.tokenizer.decode(output[0]).split("<|text_start|>")[-1].split("<|text_end|>")[0].split("\n"):
             res+=text.split("<|word_start|>")[-1].split("<|word_end|>")[0]
             res+=" "
-        return res.strip()
+        return res.strip()  
