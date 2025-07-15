@@ -10,8 +10,8 @@ uvicorn[standard]==0.24.0
 python-multipart==0.0.6
 
 # Machine Learning & AI (Compatible versions)
-torch==2.7.0
-torchaudio==2.7.0
+torch==2.1.0
+torchaudio==2.1.0
 transformers==4.35.2
 huggingface-hub==0.17.3
 
@@ -24,12 +24,9 @@ python-dotenv==1.0.0
 # HTTP & Network
 requests==2.31.0
 
-# Testing Framework
-pytest==7.4.3
-pytest-asyncio==0.21.1
 
-# Production Server
-gunicorn==21.2.0
+
+
 
 # Performance & Optimization
 aiofiles==23.2.0
