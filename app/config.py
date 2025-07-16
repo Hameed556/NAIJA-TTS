@@ -35,7 +35,7 @@ class Settings:
     )
     MODEL_CHECKPOINT_URL: str = os.getenv(
         "MODEL_CHECKPOINT_URL", 
-        "https://huggingface.co/Hameed13/nigerian-tts-model/resolve/main/wavtokenizer_large_speech_320_24k.ckpt"
+        "  https://drive.google.com/uc?id=1-ASeEkrn4HY49yZWHTASgfGFNXdVnLTt"
     )
 
     # CORS settings

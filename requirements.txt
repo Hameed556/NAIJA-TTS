@@ -27,7 +27,10 @@ requests==2.31.0
 
 
 
-
+  outetts
+  uroman
+  protobuf==3.20.*
+  
 # Performance & Optimization
 aiofiles==23.2.0
 orjson==3.9.10
