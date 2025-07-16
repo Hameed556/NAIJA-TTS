@@ -35,7 +35,7 @@ class Settings:
     )
     MODEL_CHECKPOINT_URL: str = os.getenv(
         "MODEL_CHECKPOINT_URL", 
-        "https://huggingface.co/Hameed13/News_Podcast_Model/resolve/main/model.ckpt"
+        "https://huggingface.co/Hameed13/nigerian-tts-model/resolve/main/wavtokenizer_large_speech_320_24k.ckpt"
     )
 
     # CORS settings
