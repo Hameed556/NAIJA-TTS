@@ -13,7 +13,7 @@ class Settings:
     API_DESCRIPTION: str = "FastAPI-based Text-to-Speech API for Nigerian languages and accents"
     
     # Model configuration
-    TOKENIZER_PATH: str = os.getenv("TOKENIZER_PATH", "saheedniyi/YarnGPT")
+    TOKENIZER_PATH: str = os.getenv("TOKENIZER_PATH", "saheedniyi/YarnGPT2")
     WAV_TOKENIZER_CONFIG_PATH: str = os.getenv(
         "WAV_TOKENIZER_CONFIG_PATH", 
         "wavtokenizer_mediumdata_frame75_3s_nq1_code4096_dim512_kmeans200_attn.yaml"
